@@ -1,0 +1,17 @@
+.procard{
+    width: 250px;
+    border: 1 px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.procard__div{
+    width: 100%;
+}
+
+.prodcard__buttons {
+    /* padding: */
+
+}
