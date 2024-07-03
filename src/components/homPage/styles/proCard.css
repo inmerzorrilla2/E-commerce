@@ -7,11 +7,40 @@
     align-items: center;
 }
 
-.procard__div{
-    width: 100%;
-}
-
+.prodcard_img {
+    position: relative;
+    height: 200px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .prodcard_img img:first-child {
+    opacity: 1;
+    transition: opacity .5s;
+  }
+  
+  .prodcard_img:hover img:first-child {
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  .prodcard_img img:last-child {
+    position: absolute;
+    padding: 10px;
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  
+  .prodcard_img:hover img:last-child {
+    opacity: 1;
+    transition: opacity .5s;
+  }
+  
 .prodcard__buttons {
-    /* padding: */
+    padding-bottom: 20px;
+    display: flex;
+    gap: 20px;
 
 }

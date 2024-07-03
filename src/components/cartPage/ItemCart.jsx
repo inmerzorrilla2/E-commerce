@@ -15,6 +15,7 @@ const ItemCart = ({prod}) => {
         if (prod.quantity > 1) {
             dispatch(updateProductThunk(prod.id, {
                 "quantity": prod.quantity - 1,
+                
 
         }))
 

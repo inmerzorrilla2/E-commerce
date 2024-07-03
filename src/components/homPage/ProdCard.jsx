@@ -11,24 +11,22 @@ const ProdCard = ({prod}) => {
     const dispatch = useDispatch()
 
     const handleDetalis = () => {
-        navigate('/product/${prod.id}');
+        navigate(`/product/${prod.id}`);
 
     }
 
     const handleAddCart = () => {
-        dispatch(postProductsThunk)({
-            
+        dispatch(postProductsThunk({        
                 "quantity": 1,
-                "productId": prod.id
-            
-    })
-
+                "productId": prod.id,      
+    }))
     }
 
   return (
     <article className='prodcard'>
     <figure className='prodcard__img'>
         <img src={prod.images[0].url} alt="product image" />
+        <img src={prod.images[1].url} alt="product image" />
     </figure>
     <hr className='procard__div'/>
     <ul>

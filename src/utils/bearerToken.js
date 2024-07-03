@@ -2,8 +2,7 @@
 
 const bearerToken = () => {
     const token = localStorage.getItem('token')
-  return 
-    {
+  return {
         headers: {
             Authorization: `Bearer ${token}`
         }

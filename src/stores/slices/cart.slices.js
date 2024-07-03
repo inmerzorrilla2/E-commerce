@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
-import bearerToken from "../../utils/bearerToken";
+import bearerToken from "../../utils/bearerToken.js";
 const urlBase = 'https://e-commerce-api-v2.academlo.tech/api/v1'
 
 const cart = createSlice({

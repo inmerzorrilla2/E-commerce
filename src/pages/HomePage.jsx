@@ -5,6 +5,11 @@ import { getProductsThunk }  from '../stores/slices/products.slice.js'
 import './styles/homePage.css'
 import FilterPrice from '../components/homPage/FilterPrice.jsx'
 import FilterSelect from '../components/homPage/FilterSelect.jsx'
+import "./styles/filterprice.css";
+
+
+
+const body = document.querySelector('body')
 
 const HomePage = () => {
 
@@ -15,6 +20,8 @@ const HomePage = () => {
   })
 
   const [categoryValue, setCategoryValue] = useState('')
+
+  const [menu, setMenu] = useState(false)
 
   const products = useSelector((store) => store.products)
 
@@ -42,29 +49,42 @@ const HomePage = () => {
     const category = categoryValue==='' ? true : prod.
     categoryId=== +categoryValue;
     return name && price && category;
-    
+
 
   }
+    
+    const handleMenu = () => {
+      setMenu(!menu)
+    }
+
+    const handleMode = () => {
+      body.classList.toggle('dark')
+    }
+
+  
   
   return (
     <div className='homepage'>
     
     
-      <div className='homepage__filters'>
-        <div>
-        <input ref={textInput} onChange=
-        {handleChange} type="text" />
-        <button>🔍</button>
-        </div>
+      <div className={`homepage__filters ${menu && 'active'}`}>
+        <button onClick={handleMenu}>X</button>
         <FilterPrice
-            setInputPrice={setInputPrice}
-        />
+              setInputPrice={setInputPrice}
+          />
         
-      </div>
-      <FilterSelect
-        setCategoryValue={setCategoryValue}
-      />
-
+        <FilterSelect
+          setCategoryValue={setCategoryValue}
+        />
+        <button onClick={handleMode}>Change mode</button>
+        </div>
+        <div>
+          <input ref={textInput} onChange={handleChange}
+           type="text" />
+          <button>🔍</button>
+        </div>
+        
+      <button className={menu && 'active'} onClick={handleMenu}>Menu</button>
       <div className='homepage__container'>
         {
           products?.filter(cbFilter).map((prod) =>(
