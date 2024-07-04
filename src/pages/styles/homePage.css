@@ -30,7 +30,7 @@
 
 
 
-homepage__container {
+.homepage__container {
     padding: 20px 20px 20px 250px;
     display: flex;
     flex-wrap: wrap;
@@ -44,6 +44,9 @@ homepage__container {
         display: inline-block;
     }
 
+    .homepage > button {
+        display: inline-block;
+    }
     .homepage > button.active {
         visibility: hidden;
     }
@@ -54,13 +57,14 @@ homepage__container {
         border-radius: 15px;
         left: -100%;
         transition: left 0.5s;
+        z-index: 10;
     }
 
 
     .homepage__filters.active{
         background-color: gray;
         border-radius: 15px;
-        left: -100%;
+        left: 0;
         transition: left 0.5s;
     }
 

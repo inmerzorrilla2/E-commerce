@@ -84,7 +84,7 @@ const HomePage = () => {
           <button>🔍</button>
         </div>
         
-      <button className={menu && 'active'} onClick={handleMenu}>Menu</button>
+      <button className={menu ? 'active':''} onClick={handleMenu}>Menu</button>
       <div className='homepage__container'>
         {
           products?.filter(cbFilter).map((prod) =>(
